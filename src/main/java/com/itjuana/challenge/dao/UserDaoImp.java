@@ -22,6 +22,11 @@ public class UserDaoImp implements UserDao {
     };
 
     @Override
+    public User getUser(Integer id) {
+        return entityManager.find(User.class, id);
+    };
+
+    @Override
     public void create(User user) {
         entityManager.merge(user);
     };
